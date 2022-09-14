@@ -1,0 +1,12 @@
+Change Component Footprint: Designator=J? Old Footprint=PIN1 New Footprint=M.2 SMT-FEMALE - FULL
+Add Component: Footprint Not Found R0402_M
+Add Component: Footprint Not Found R0402_M
+Add Pin To Net: Unknown Pin: Pin R?-1
+Add Pin To Net: Unknown Pin: Pin R?-1
+Add Pin To Net: Unknown Pin: Pin R?-2
+Add Pin To Net: Unknown Pin: Pin R?-2
+Added Member To Class: ClassName=Sheet1 Member=Component J? NGFF-67P_B-KEY×ù×Ó 4.2H¸ß
+Added Member To Class: ClassName=Sheet1 Member=Component P? Header 12X2
+Add Class Member: Failed to add class member : Component R? 22R
+Add Class Member: Failed to add class member : Component R? 22R
+Added Room: Name=Sheet1
