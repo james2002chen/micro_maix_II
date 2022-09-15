@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=P? NewDesignator=P1
+Add Component: Footprint Not Found R0402_M
+Add Component: Footprint Not Found R0402_M
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Add Class Member: Failed to add class member : Component R1 22R
+Add Class Member: Failed to add class member : Component R2 22R
+Added Room: Name=Sheet1

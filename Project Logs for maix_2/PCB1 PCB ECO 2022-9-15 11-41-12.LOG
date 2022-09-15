@@ -1,0 +1,12 @@
+Change Component Footprint: Designator=P1 Old Footprint=F_24PIN New Footprint=HDR2X12_CEN
+Change Component Comment : Designator=P1 Old Comment=Header 12X2 New Comment=Header 12X2A
+Add Component: Footprint Not Found R0402_M
+Add Component: Footprint Not Found R0402_M
+Added Pin To Net: NetName=GND Pin=J1-1
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Add Class Member: Failed to add class member : Component R1 22R
+Add Class Member: Failed to add class member : Component R2 22R
+Added Room: Name=Sheet1

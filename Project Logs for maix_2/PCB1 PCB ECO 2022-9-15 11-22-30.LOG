@@ -1,0 +1,18 @@
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Component Designator: OldDesignator=J? NewDesignator=J2
+Change Component Designator: OldDesignator=J? NewDesignator=J3
+Change Component Designator: OldDesignator=J? NewDesignator=J4
+Change Component Designator: OldDesignator=MICRO_SD? NewDesignator=MICRO_SD1
+Change Component Designator: OldDesignator=P? NewDesignator=P1
+Add Component: Footprint Not Found R0402_M
+Add Component: Footprint Not Found R0402_M
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Added Member To Class: ClassName=Sheet1 Member=Component J1 Socket
+Added Member To Class: ClassName=Sheet1 Member=Component J2 NGFF-67P_B-KEY×ù×Ó 4.2H¸ß
+Added Member To Class: ClassName=Sheet1 Member=Component J3 TYPE-C-31-M-12
+Add Class Member: Failed to add class member : Component R1 22R
+Add Class Member: Failed to add class member : Component R2 22R
+Added Room: Name=Sheet1
