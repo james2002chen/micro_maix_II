@@ -1,0 +1,18 @@
+Added Component: Designator=MICRO_SD?(TF-01A)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "{'manufacturer': u'HRO Electronics Co., Ltd.'}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TF-01A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add Component: Footprint Not Found R0402_M
+Add Component: Footprint Not Found R0402_M
+Add Pin To Net: Unknown Pin: Pin R?-1
+Add Pin To Net: Unknown Pin: Pin R?-1
+Add Pin To Net: Unknown Pin: Pin R?-2
+Add Pin To Net: Unknown Pin: Pin R?-2
+Added Member To Class: ClassName=Sheet1 Member=Component J? NGFF-67P_B-KEY×ù×Ó 4.2H¸ß
+Added Member To Class: ClassName=Sheet1 Member=Component MICRO_SD? TF-01A
+Add Class Member: Failed to add class member : Component R? 22R
+Add Class Member: Failed to add class member : Component R? 22R
+Added Room: Name=Sheet1

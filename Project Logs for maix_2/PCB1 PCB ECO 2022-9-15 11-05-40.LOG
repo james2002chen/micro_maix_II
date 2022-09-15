@@ -1,0 +1,6 @@
+Change Physical Footprint: Designator=J? Old Footprint=M.2 SMT-FEMALE - FULL New Footprint=M.2 SMT-FEMALE - FULL
+Change Physical Footprint: Designator=J? Old Footprint=M2-67P0R50_B_FEMALE New Footprint=M2-67P0R50_B_FEMALE
+Change Physical Footprint: Designator=MICRO_SD? Old Footprint=TF-01A New Footprint=TF-01A
+Change Physical Footprint: Designator=P? Old Footprint=F_24PIN New Footprint=F_24PIN
+Change Physical Footprint: Designator=U1 Old Footprint=OPTO_GP1S196HCZ0F New Footprint=OPTO_GP1S196HCZ0F
+Change Physical Footprint: Designator=U2 Old Footprint=OPTO_GP1S196HCZ0F New Footprint=OPTO_GP1S196HCZ0F
