@@ -1,0 +1,145 @@
+Protel Design System Design Rule Check
+PCB File : E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc
+Date     : 2022/9/20
+Time     : 7:36:56
+
+Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.089mm) (Max=2.54mm) (Preferred=0.089mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.127mm) (Conductor Width=0.127mm) (Air Gap=0.127mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Waived Violations Of Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.077mm < 0.1mm) Between Pad C1-1(54.678mm,25.4mm) on Top Layer And Pad C1-2(55.558mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.077mm < 0.1mm) Between Pad C2-1(50.36mm,25.4mm) on Top Layer And Pad C2-2(51.24mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.077mm < 0.1mm) Between Pad C3-1(128.719mm,25.4mm) on Top Layer And Pad C3-2(129.599mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.077mm < 0.1mm) Between Pad C4-1(133.037mm,25.4mm) on Top Layer And Pad C4-2(133.917mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.077mm < 0.1mm) Between Pad C5-1(137.355mm,25.4mm) on Top Layer And Pad C5-2(138.235mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-1(159.571mm,4.339mm) on Top Layer And Pad J2-3(159.571mm,4.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-10(167.121mm,6.589mm) on Top Layer And Pad J2-8(167.121mm,6.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-11(159.571mm,6.839mm) on Top Layer And Pad J2-9(159.571mm,6.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-2(167.121mm,4.589mm) on Top Layer And Pad J2-4(167.121mm,5.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-20(167.121mm,9.089mm) on Top Layer And Pad J2-22(167.121mm,9.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-21(159.571mm,9.339mm) on Top Layer And Pad J2-23(159.571mm,9.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-22(167.121mm,9.589mm) on Top Layer And Pad J2-24(167.121mm,10.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-23(159.571mm,9.839mm) on Top Layer And Pad J2-25(159.571mm,10.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-24(167.121mm,10.089mm) on Top Layer And Pad J2-26(167.121mm,10.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-25(159.571mm,10.339mm) on Top Layer And Pad J2-27(159.571mm,10.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-26(167.121mm,10.589mm) on Top Layer And Pad J2-28(167.121mm,11.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-27(159.571mm,10.839mm) on Top Layer And Pad J2-29(159.571mm,11.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-28(167.121mm,11.089mm) on Top Layer And Pad J2-30(167.121mm,11.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-29(159.571mm,11.339mm) on Top Layer And Pad J2-31(159.571mm,11.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-3(159.571mm,4.839mm) on Top Layer And Pad J2-5(159.571mm,5.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-30(167.121mm,11.589mm) on Top Layer And Pad J2-32(167.121mm,12.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-31(159.571mm,11.839mm) on Top Layer And Pad J2-33(159.571mm,12.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-32(167.121mm,12.089mm) on Top Layer And Pad J2-34(167.121mm,12.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-33(159.571mm,12.339mm) on Top Layer And Pad J2-35(159.571mm,12.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-34(167.121mm,12.589mm) on Top Layer And Pad J2-36(167.121mm,13.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-35(159.571mm,12.839mm) on Top Layer And Pad J2-37(159.571mm,13.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-36(167.121mm,13.089mm) on Top Layer And Pad J2-38(167.121mm,13.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-37(159.571mm,13.339mm) on Top Layer And Pad J2-39(159.571mm,13.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-38(167.121mm,13.589mm) on Top Layer And Pad J2-40(167.121mm,14.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-39(159.571mm,13.839mm) on Top Layer And Pad J2-41(159.571mm,14.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-4(167.121mm,5.089mm) on Top Layer And Pad J2-6(167.121mm,5.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-40(167.121mm,14.089mm) on Top Layer And Pad J2-42(167.121mm,14.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-41(159.571mm,14.339mm) on Top Layer And Pad J2-43(159.571mm,14.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-42(167.121mm,14.589mm) on Top Layer And Pad J2-44(167.121mm,15.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-43(159.571mm,14.839mm) on Top Layer And Pad J2-45(159.571mm,15.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-44(167.121mm,15.089mm) on Top Layer And Pad J2-46(167.121mm,15.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-45(159.571mm,15.339mm) on Top Layer And Pad J2-47(159.571mm,15.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-46(167.121mm,15.589mm) on Top Layer And Pad J2-48(167.121mm,16.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-47(159.571mm,15.839mm) on Top Layer And Pad J2-49(159.571mm,16.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-48(167.121mm,16.089mm) on Top Layer And Pad J2-50(167.121mm,16.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-49(159.571mm,16.339mm) on Top Layer And Pad J2-51(159.571mm,16.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-5(159.571mm,5.339mm) on Top Layer And Pad J2-7(159.571mm,5.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-50(167.121mm,16.589mm) on Top Layer And Pad J2-52(167.121mm,17.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-51(159.571mm,16.839mm) on Top Layer And Pad J2-53(159.571mm,17.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-52(167.121mm,17.089mm) on Top Layer And Pad J2-54(167.121mm,17.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-53(159.571mm,17.339mm) on Top Layer And Pad J2-55(159.571mm,17.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-54(167.121mm,17.589mm) on Top Layer And Pad J2-56(167.121mm,18.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-55(159.571mm,17.839mm) on Top Layer And Pad J2-57(159.571mm,18.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-56(167.121mm,18.089mm) on Top Layer And Pad J2-58(167.121mm,18.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-57(159.571mm,18.339mm) on Top Layer And Pad J2-59(159.571mm,18.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-58(167.121mm,18.589mm) on Top Layer And Pad J2-60(167.121mm,19.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-59(159.571mm,18.839mm) on Top Layer And Pad J2-61(159.571mm,19.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-6(167.121mm,5.589mm) on Top Layer And Pad J2-8(167.121mm,6.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-60(167.121mm,19.089mm) on Top Layer And Pad J2-62(167.121mm,19.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-61(159.571mm,19.339mm) on Top Layer And Pad J2-63(159.571mm,19.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-62(167.121mm,19.589mm) on Top Layer And Pad J2-64(167.121mm,20.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-63(159.571mm,19.839mm) on Top Layer And Pad J2-65(159.571mm,20.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-64(167.121mm,20.089mm) on Top Layer And Pad J2-66(167.121mm,20.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-65(159.571mm,20.339mm) on Top Layer And Pad J2-67(159.571mm,20.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-66(167.121mm,20.589mm) on Top Layer And Pad J2-68(167.121mm,21.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-67(159.571mm,20.839mm) on Top Layer And Pad J2-69(159.571mm,21.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-68(167.121mm,21.089mm) on Top Layer And Pad J2-70(167.121mm,21.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-69(159.571mm,21.339mm) on Top Layer And Pad J2-71(159.571mm,21.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-7(159.571mm,5.839mm) on Top Layer And Pad J2-9(159.571mm,6.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-70(167.121mm,21.589mm) on Top Layer And Pad J2-72(167.121mm,22.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-71(159.571mm,21.839mm) on Top Layer And Pad J2-73(159.571mm,22.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-72(167.121mm,22.089mm) on Top Layer And Pad J2-74(167.121mm,22.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.1mm) Between Pad J2-73(159.571mm,22.339mm) on Top Layer And Pad J2-75(159.571mm,22.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.042mm < 0.1mm) Between Pad J3-A1B12(91.746mm,24.526mm) on Top Layer And Pad J3-S1(90.676mm,23.611mm) on Multi-Layer [Top Solder] Mask Sliver [0.042mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad J3-A4B9(92.546mm,24.526mm) on Top Layer And Pad J3-B8(93.246mm,24.526mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.042mm < 0.1mm) Between Pad J3-B1A12(98.246mm,24.526mm) on Top Layer And Pad J3-S2(99.316mm,23.611mm) on Multi-Layer [Top Solder] Mask Sliver [0.042mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad J3-B4A9(97.446mm,24.526mm) on Top Layer And Pad J3-B5(96.746mm,24.526mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-1(83.471mm,23.578mm) on Top Layer And Pad P1-2(83.471mm,23.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-10(83.471mm,19.078mm) on Top Layer And Pad P1-11(83.471mm,18.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-10(83.471mm,19.078mm) on Top Layer And Pad P1-9(83.471mm,19.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-11(83.471mm,18.578mm) on Top Layer And Pad P1-12(83.471mm,18.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-13(87.471mm,18.078mm) on Top Layer And Pad P1-14(87.471mm,18.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-14(87.471mm,18.578mm) on Top Layer And Pad P1-15(87.471mm,19.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-15(87.471mm,19.078mm) on Top Layer And Pad P1-16(87.471mm,19.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-16(87.471mm,19.578mm) on Top Layer And Pad P1-17(87.471mm,20.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-17(87.471mm,20.078mm) on Top Layer And Pad P1-18(87.471mm,20.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-18(87.471mm,20.578mm) on Top Layer And Pad P1-19(87.471mm,21.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-19(87.471mm,21.078mm) on Top Layer And Pad P1-20(87.471mm,21.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-2(83.471mm,23.078mm) on Top Layer And Pad P1-3(83.471mm,22.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-20(87.471mm,21.578mm) on Top Layer And Pad P1-21(87.471mm,22.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-21(87.471mm,22.078mm) on Top Layer And Pad P1-22(87.471mm,22.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-22(87.471mm,22.578mm) on Top Layer And Pad P1-23(87.471mm,23.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-23(87.471mm,23.078mm) on Top Layer And Pad P1-24(87.471mm,23.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-3(83.471mm,22.578mm) on Top Layer And Pad P1-4(83.471mm,22.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-4(83.471mm,22.078mm) on Top Layer And Pad P1-5(83.471mm,21.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-5(83.471mm,21.578mm) on Top Layer And Pad P1-6(83.471mm,21.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-6(83.471mm,21.078mm) on Top Layer And Pad P1-7(83.471mm,20.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-7(83.471mm,20.578mm) on Top Layer And Pad P1-8(83.471mm,20.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.1mm) Between Pad P1-8(83.471mm,20.078mm) on Top Layer And Pad P1-9(83.471mm,19.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]Waived by ìÏÌì ³Â at 2022/9/20 7:31:54²»×ö×èº¸ÇÅ
+Waived Violations :94
+
+
+Violations Detected : 0
+Waived Violations : 94
+Time Elapsed        : 00:00:02

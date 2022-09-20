@@ -1,0 +1,627 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://F:\Altium\Shared22.7.1\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2022/9/20</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">7:36:56</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc" class="file"><acronym title="E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc">E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">94</td></tr>
+</table>
+</td>
+</table><a name="IDBQY050MOQG4UDSXKGDZRDL1QTMPKP4ES1I5ERBIIGE2JHNVDT5SD"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZIY0HWQZDZ1NLK0DCX0ILAYFUFFMZYAEQPVDUIBQ5GDBZB2XELCN">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDE14IKGLMODXIPLMYLA4LFAHO2DS4QU0E4FYBXFL35JQSUM1T3QRM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT5MJHSWCQ1DQOITRNJOQHQ3I5BLVMNAL5ZC21CFVTSGKQZKWUZ4K">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLOQDXZ4AQMHAFPEOWV5R3BB3RJALUODF4ST2GFNX13USAVKXKGMC">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPFSB5EBRVOVUDIA2H0DBHYSLPR24DBN3553EOFVWZVSNEBICQBM">Width Constraint (Min=0.089mm) (Max=2.54mm) (Preferred=0.089mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQE54BMKGENPNPSKIBMGVQN1EKN1MBYFZAS5DXSFZAGRCL35RBRIF">Power Plane Connect Rule(Relief Connect )(Expansion=0.127mm) (Conductor Width=0.127mm) (Air Gap=0.127mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWWEPHLWAJWEMHFREGZPHFZN5GGSVH2HT0RN3NYEUV2VJGAMNAHIB">Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVWVOBRDD4N2PBYBTMOCH24ZAVLBIACXX3X3SYPKS4EGDR0EH2TEJ">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSV343HSWQ1V4NYUY4FA1UBL4KF3PQUAL2UMGGLNUATLB1F0GA34N">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDSTGVCV0JJT5HM4RX4AQGWM3DIMHOUQATWEYXKON5BIWFKE5EU1E">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNYLV4H13R2IUH2DBBTGAI4TNSLHP0VTDCPXADSLV3FGESPFWSFV">Silk to Silk (Clearance=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRH5NQRL4VXPEIAHBYXTC31GXCJM3IPEKO4YXRACZKC3WNMNYRF4D">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXYGIZO4M2ZDLIZ3EQUHUOSG3ZIRMME1LLBK0AYBLMNMPXPIV42LD">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPCB4HHNNPTH3FR5XXHLYQ1I2RBHKSMPSUOJNVTB4BFD2ZAS0SAJD">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">94</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">94</td>
+</tr>
+</table><br><a name="ID2UXGH0Q5MNZWNNUI1KZSTASPGFWDHRSAB0FQ5NH1RGOS5BH4A4BL"><h2>Rule Violations</h2></a><a name="ID2PONIXLKP3RWEVKT2FMDR0WNHMY2ZVZKW4TDTLNZKYLNPVGHABMC"><h2>Waived Violations</h2></a><a name="IDPCB4HHNNPTH3FR5XXHLYQ1I2RBHKSMPSUOJNVTB4BFD2ZAS0SAJD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2167.407mil|Location2.X=2172.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2167.407mil|Location2.X=2172.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.077mm &lt; 0.1mm) Between Pad C1-1(54.678mm,25.4mm) on Top Layer And Pad C1-2(55.558mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1997.407mil|Location2.X=2002.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1997.407mil|Location2.X=2002.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.077mm &lt; 0.1mm) Between Pad C2-1(50.36mm,25.4mm) on Top Layer And Pad C2-2(51.24mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5082.407mil|Location2.X=5087.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5082.407mil|Location2.X=5087.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.077mm &lt; 0.1mm) Between Pad C3-1(128.719mm,25.4mm) on Top Layer And Pad C3-2(129.599mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5252.407mil|Location2.X=5257.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5252.407mil|Location2.X=5257.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.077mm &lt; 0.1mm) Between Pad C4-1(133.037mm,25.4mm) on Top Layer And Pad C4-2(133.917mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5422.407mil|Location2.X=5427.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5422.407mil|Location2.X=5427.593mil|Location1.Y=980.808mil|Location2.Y=985.995mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.077mm &lt; 0.1mm) Between Pad C5-1(137.355mm,25.4mm) on Top Layer And Pad C5-2(138.235mm,25.4mm) on Top Layer [Top Solder] Mask Sliver [0.077mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=178.076mil|Location2.Y=183.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=178.076mil|Location2.Y=183.263mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-1(159.571mm,4.339mm) on Top Layer And Pad J2-3(159.571mm,4.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=246.973mil|Location2.Y=252.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=246.973mil|Location2.Y=252.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-10(167.121mm,6.589mm) on Top Layer And Pad J2-8(167.121mm,6.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=256.816mil|Location2.Y=262.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=256.816mil|Location2.Y=262.003mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-11(159.571mm,6.839mm) on Top Layer And Pad J2-9(159.571mm,6.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=187.918mil|Location2.Y=193.105mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=187.918mil|Location2.Y=193.105mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-2(167.121mm,4.589mm) on Top Layer And Pad J2-4(167.121mm,5.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=365.084mil|Location2.Y=370.271mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=365.084mil|Location2.Y=370.271mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-20(167.121mm,9.089mm) on Top Layer And Pad J2-22(167.121mm,9.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=374.926mil|Location2.Y=380.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=374.926mil|Location2.Y=380.113mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-21(159.571mm,9.339mm) on Top Layer And Pad J2-23(159.571mm,9.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=384.769mil|Location2.Y=389.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=384.769mil|Location2.Y=389.956mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-22(167.121mm,9.589mm) on Top Layer And Pad J2-24(167.121mm,10.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=394.611mil|Location2.Y=399.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=394.611mil|Location2.Y=399.798mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-23(159.571mm,9.839mm) on Top Layer And Pad J2-25(159.571mm,10.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=404.454mil|Location2.Y=409.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=404.454mil|Location2.Y=409.641mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-24(167.121mm,10.089mm) on Top Layer And Pad J2-26(167.121mm,10.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=414.296mil|Location2.Y=419.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=414.296mil|Location2.Y=419.483mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-25(159.571mm,10.339mm) on Top Layer And Pad J2-27(159.571mm,10.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=424.139mil|Location2.Y=429.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=424.139mil|Location2.Y=429.326mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-26(167.121mm,10.589mm) on Top Layer And Pad J2-28(167.121mm,11.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=433.981mil|Location2.Y=439.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=433.981mil|Location2.Y=439.168mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-27(159.571mm,10.839mm) on Top Layer And Pad J2-29(159.571mm,11.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=443.824mil|Location2.Y=449.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=443.824mil|Location2.Y=449.011mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-28(167.121mm,11.089mm) on Top Layer And Pad J2-30(167.121mm,11.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=453.666mil|Location2.Y=458.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=453.666mil|Location2.Y=458.853mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-29(159.571mm,11.339mm) on Top Layer And Pad J2-31(159.571mm,11.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=197.761mil|Location2.Y=202.948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=197.761mil|Location2.Y=202.948mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-3(159.571mm,4.839mm) on Top Layer And Pad J2-5(159.571mm,5.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=463.509mil|Location2.Y=468.696mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=463.509mil|Location2.Y=468.696mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-30(167.121mm,11.589mm) on Top Layer And Pad J2-32(167.121mm,12.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=473.351mil|Location2.Y=478.538mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=473.351mil|Location2.Y=478.538mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-31(159.571mm,11.839mm) on Top Layer And Pad J2-33(159.571mm,12.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=483.194mil|Location2.Y=488.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=483.194mil|Location2.Y=488.381mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-32(167.121mm,12.089mm) on Top Layer And Pad J2-34(167.121mm,12.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=493.036mil|Location2.Y=498.223mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=493.036mil|Location2.Y=498.223mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-33(159.571mm,12.339mm) on Top Layer And Pad J2-35(159.571mm,12.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=502.879mil|Location2.Y=508.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=502.879mil|Location2.Y=508.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-34(167.121mm,12.589mm) on Top Layer And Pad J2-36(167.121mm,13.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=512.721mil|Location2.Y=517.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=512.721mil|Location2.Y=517.908mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-35(159.571mm,12.839mm) on Top Layer And Pad J2-37(159.571mm,13.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=522.564mil|Location2.Y=527.751mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=522.564mil|Location2.Y=527.751mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-36(167.121mm,13.089mm) on Top Layer And Pad J2-38(167.121mm,13.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=532.407mil|Location2.Y=537.593mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=532.407mil|Location2.Y=537.593mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-37(159.571mm,13.339mm) on Top Layer And Pad J2-39(159.571mm,13.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=542.249mil|Location2.Y=547.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=542.249mil|Location2.Y=547.436mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-38(167.121mm,13.589mm) on Top Layer And Pad J2-40(167.121mm,14.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=552.092mil|Location2.Y=557.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=552.092mil|Location2.Y=557.279mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-39(159.571mm,13.839mm) on Top Layer And Pad J2-41(159.571mm,14.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=207.603mil|Location2.Y=212.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=207.603mil|Location2.Y=212.79mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-4(167.121mm,5.089mm) on Top Layer And Pad J2-6(167.121mm,5.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=561.934mil|Location2.Y=567.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=561.934mil|Location2.Y=567.121mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-40(167.121mm,14.089mm) on Top Layer And Pad J2-42(167.121mm,14.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=571.777mil|Location2.Y=576.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=571.777mil|Location2.Y=576.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-41(159.571mm,14.339mm) on Top Layer And Pad J2-43(159.571mm,14.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=581.619mil|Location2.Y=586.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=581.619mil|Location2.Y=586.806mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-42(167.121mm,14.589mm) on Top Layer And Pad J2-44(167.121mm,15.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=591.462mil|Location2.Y=596.649mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=591.462mil|Location2.Y=596.649mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-43(159.571mm,14.839mm) on Top Layer And Pad J2-45(159.571mm,15.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=601.304mil|Location2.Y=606.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=601.304mil|Location2.Y=606.491mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-44(167.121mm,15.089mm) on Top Layer And Pad J2-46(167.121mm,15.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=611.147mil|Location2.Y=616.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=611.147mil|Location2.Y=616.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-45(159.571mm,15.339mm) on Top Layer And Pad J2-47(159.571mm,15.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=620.989mil|Location2.Y=626.176mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=620.989mil|Location2.Y=626.176mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-46(167.121mm,15.589mm) on Top Layer And Pad J2-48(167.121mm,16.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=630.832mil|Location2.Y=636.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=630.832mil|Location2.Y=636.019mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-47(159.571mm,15.839mm) on Top Layer And Pad J2-49(159.571mm,16.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=640.674mil|Location2.Y=645.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=640.674mil|Location2.Y=645.861mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-48(167.121mm,16.089mm) on Top Layer And Pad J2-50(167.121mm,16.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=650.517mil|Location2.Y=655.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=650.517mil|Location2.Y=655.704mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-49(159.571mm,16.339mm) on Top Layer And Pad J2-51(159.571mm,16.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=217.446mil|Location2.Y=222.633mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=217.446mil|Location2.Y=222.633mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-5(159.571mm,5.339mm) on Top Layer And Pad J2-7(159.571mm,5.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=660.359mil|Location2.Y=665.546mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=660.359mil|Location2.Y=665.546mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-50(167.121mm,16.589mm) on Top Layer And Pad J2-52(167.121mm,17.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=670.202mil|Location2.Y=675.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=670.202mil|Location2.Y=675.389mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-51(159.571mm,16.839mm) on Top Layer And Pad J2-53(159.571mm,17.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=680.044mil|Location2.Y=685.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=680.044mil|Location2.Y=685.231mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-52(167.121mm,17.089mm) on Top Layer And Pad J2-54(167.121mm,17.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=689.887mil|Location2.Y=695.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=689.887mil|Location2.Y=695.074mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-53(159.571mm,17.339mm) on Top Layer And Pad J2-55(159.571mm,17.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=699.729mil|Location2.Y=704.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=699.729mil|Location2.Y=704.916mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-54(167.121mm,17.589mm) on Top Layer And Pad J2-56(167.121mm,18.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=709.572mil|Location2.Y=714.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=709.572mil|Location2.Y=714.759mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-55(159.571mm,17.839mm) on Top Layer And Pad J2-57(159.571mm,18.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=719.414mil|Location2.Y=724.601mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=719.414mil|Location2.Y=724.601mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-56(167.121mm,18.089mm) on Top Layer And Pad J2-58(167.121mm,18.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=729.257mil|Location2.Y=734.444mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=729.257mil|Location2.Y=734.444mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-57(159.571mm,18.339mm) on Top Layer And Pad J2-59(159.571mm,18.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=739.099mil|Location2.Y=744.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=739.099mil|Location2.Y=744.286mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-58(167.121mm,18.589mm) on Top Layer And Pad J2-60(167.121mm,19.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=748.942mil|Location2.Y=754.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=748.942mil|Location2.Y=754.129mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-59(159.571mm,18.839mm) on Top Layer And Pad J2-61(159.571mm,19.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=227.288mil|Location2.Y=232.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=227.288mil|Location2.Y=232.475mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-6(167.121mm,5.589mm) on Top Layer And Pad J2-8(167.121mm,6.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=758.784mil|Location2.Y=763.971mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=758.784mil|Location2.Y=763.971mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-60(167.121mm,19.089mm) on Top Layer And Pad J2-62(167.121mm,19.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=768.627mil|Location2.Y=773.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=768.627mil|Location2.Y=773.814mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-61(159.571mm,19.339mm) on Top Layer And Pad J2-63(159.571mm,19.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=778.47mil|Location2.Y=783.657mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=778.47mil|Location2.Y=783.657mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-62(167.121mm,19.589mm) on Top Layer And Pad J2-64(167.121mm,20.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=788.312mil|Location2.Y=793.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=788.312mil|Location2.Y=793.499mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-63(159.571mm,19.839mm) on Top Layer And Pad J2-65(159.571mm,20.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=798.155mil|Location2.Y=803.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=798.155mil|Location2.Y=803.342mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-64(167.121mm,20.089mm) on Top Layer And Pad J2-66(167.121mm,20.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=807.997mil|Location2.Y=813.184mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=807.997mil|Location2.Y=813.184mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-65(159.571mm,20.339mm) on Top Layer And Pad J2-67(159.571mm,20.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=817.84mil|Location2.Y=823.027mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=817.84mil|Location2.Y=823.027mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-66(167.121mm,20.589mm) on Top Layer And Pad J2-68(167.121mm,21.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=827.682mil|Location2.Y=832.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=827.682mil|Location2.Y=832.869mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-67(159.571mm,20.839mm) on Top Layer And Pad J2-69(159.571mm,21.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=837.525mil|Location2.Y=842.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=837.525mil|Location2.Y=842.712mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-68(167.121mm,21.089mm) on Top Layer And Pad J2-70(167.121mm,21.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=847.367mil|Location2.Y=852.554mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=847.367mil|Location2.Y=852.554mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-69(159.571mm,21.339mm) on Top Layer And Pad J2-71(159.571mm,21.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=237.131mil|Location2.Y=242.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=237.131mil|Location2.Y=242.318mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-7(159.571mm,5.839mm) on Top Layer And Pad J2-9(159.571mm,6.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=857.21mil|Location2.Y=862.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=857.21mil|Location2.Y=862.397mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-70(167.121mm,21.589mm) on Top Layer And Pad J2-72(167.121mm,22.089mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=867.052mil|Location2.Y=872.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=867.052mil|Location2.Y=872.239mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-71(159.571mm,21.839mm) on Top Layer And Pad J2-73(159.571mm,22.339mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=876.895mil|Location2.Y=882.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6544.462mil|Location2.X=6549.649mil|Location1.Y=876.895mil|Location2.Y=882.082mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-72(167.121mm,22.089mm) on Top Layer And Pad J2-74(167.121mm,22.589mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=886.737mil|Location2.Y=891.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6247.217mil|Location2.X=6252.404mil|Location1.Y=886.737mil|Location2.Y=891.924mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad J2-73(159.571mm,22.339mm) on Top Layer And Pad J2-75(159.571mm,22.839mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3592.82mil|Location2.X=3598.007mil|Location1.Y=930.454mil|Location2.Y=935.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3592.82mil|Location2.X=3598.007mil|Location1.Y=930.454mil|Location2.Y=935.641mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.042mm &lt; 0.1mm) Between Pad J3-A1B12(91.746mm,24.526mm) on Top Layer And Pad J3-S1(90.676mm,23.611mm) on Multi-Layer [Top Solder] Mask Sliver [0.042mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3657.682mil|Location2.X=3662.869mil|Location1.Y=995.54mil|Location2.Y=1000.727mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3657.682mil|Location2.X=3662.869mil|Location1.Y=995.54mil|Location2.Y=1000.727mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad J3-A4B9(92.546mm,24.526mm) on Top Layer And Pad J3-B8(93.246mm,24.526mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3881.993mil|Location2.X=3887.18mil|Location1.Y=930.454mil|Location2.Y=935.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3881.993mil|Location2.X=3887.18mil|Location1.Y=930.454mil|Location2.Y=935.641mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.042mm &lt; 0.1mm) Between Pad J3-B1A12(98.246mm,24.526mm) on Top Layer And Pad J3-S2(99.316mm,23.611mm) on Multi-Layer [Top Solder] Mask Sliver [0.042mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3817.131mil|Location2.X=3822.318mil|Location1.Y=995.54mil|Location2.Y=1000.727mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3817.131mil|Location2.X=3822.318mil|Location1.Y=995.54mil|Location2.Y=1000.727mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad J3-B4A9(97.446mm,24.526mm) on Top Layer And Pad J3-B5(96.746mm,24.526mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=915.832mil|Location2.Y=921.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=915.832mil|Location2.Y=921.019mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-1(83.471mm,23.578mm) on Top Layer And Pad P1-2(83.471mm,23.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=738.667mil|Location2.Y=743.854mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=738.667mil|Location2.Y=743.854mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-10(83.471mm,19.078mm) on Top Layer And Pad P1-11(83.471mm,18.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=758.351mil|Location2.Y=763.538mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=758.351mil|Location2.Y=763.538mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-10(83.471mm,19.078mm) on Top Layer And Pad P1-9(83.471mm,19.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=718.981mil|Location2.Y=724.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=718.981mil|Location2.Y=724.168mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-11(83.471mm,18.578mm) on Top Layer And Pad P1-12(83.471mm,18.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=718.981mil|Location2.Y=724.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=718.981mil|Location2.Y=724.168mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-13(87.471mm,18.078mm) on Top Layer And Pad P1-14(87.471mm,18.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=738.666mil|Location2.Y=743.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=738.666mil|Location2.Y=743.853mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-14(87.471mm,18.578mm) on Top Layer And Pad P1-15(87.471mm,19.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=758.351mil|Location2.Y=763.538mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=758.351mil|Location2.Y=763.538mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-15(87.471mm,19.078mm) on Top Layer And Pad P1-16(87.471mm,19.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=778.036mil|Location2.Y=783.223mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=778.036mil|Location2.Y=783.223mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-16(87.471mm,19.578mm) on Top Layer And Pad P1-17(87.471mm,20.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=797.721mil|Location2.Y=802.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=797.721mil|Location2.Y=802.908mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-17(87.471mm,20.078mm) on Top Layer And Pad P1-18(87.471mm,20.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=817.406mil|Location2.Y=822.593mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=817.406mil|Location2.Y=822.593mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-18(87.471mm,20.578mm) on Top Layer And Pad P1-19(87.471mm,21.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=837.091mil|Location2.Y=842.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=837.091mil|Location2.Y=842.278mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-19(87.471mm,21.078mm) on Top Layer And Pad P1-20(87.471mm,21.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=896.147mil|Location2.Y=901.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=896.147mil|Location2.Y=901.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-2(83.471mm,23.078mm) on Top Layer And Pad P1-3(83.471mm,22.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=856.776mil|Location2.Y=861.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=856.776mil|Location2.Y=861.963mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-20(87.471mm,21.578mm) on Top Layer And Pad P1-21(87.471mm,22.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=876.461mil|Location2.Y=881.648mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=876.461mil|Location2.Y=881.648mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-21(87.471mm,22.078mm) on Top Layer And Pad P1-22(87.471mm,22.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=896.146mil|Location2.Y=901.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=896.146mil|Location2.Y=901.333mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-22(87.471mm,22.578mm) on Top Layer And Pad P1-23(87.471mm,23.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=915.832mil|Location2.Y=921.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3397.777mil|Location2.X=3402.964mil|Location1.Y=915.832mil|Location2.Y=921.019mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-23(87.471mm,23.078mm) on Top Layer And Pad P1-24(87.471mm,23.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=876.462mil|Location2.Y=881.649mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=876.462mil|Location2.Y=881.649mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-3(83.471mm,22.578mm) on Top Layer And Pad P1-4(83.471mm,22.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=856.777mil|Location2.Y=861.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=856.777mil|Location2.Y=861.964mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-4(83.471mm,22.078mm) on Top Layer And Pad P1-5(83.471mm,21.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=837.092mil|Location2.Y=842.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=837.092mil|Location2.Y=842.279mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-5(83.471mm,21.578mm) on Top Layer And Pad P1-6(83.471mm,21.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=817.407mil|Location2.Y=822.594mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=817.407mil|Location2.Y=822.594mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-6(83.471mm,21.078mm) on Top Layer And Pad P1-7(83.471mm,20.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=797.722mil|Location2.Y=802.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=797.722mil|Location2.Y=802.909mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-7(83.471mm,20.578mm) on Top Layer And Pad P1-8(83.471mm,20.078mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=778.037mil|Location2.Y=783.224mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3240.296mil|Location2.X=3245.483mil|Location1.Y=778.037mil|Location2.Y=783.224mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.1mm) Between Pad P1-8(83.471mm,20.078mm) on Top Layer And Pad P1-9(83.471mm,19.578mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br>Waived by 煜天 陈 at 2022/9/20 7:31:54<br>不做阻焊桥</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
