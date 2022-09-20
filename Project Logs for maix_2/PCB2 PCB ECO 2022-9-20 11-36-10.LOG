@@ -1,0 +1,23 @@
+Added Component: Designator=U1(SOT229P700X180-4N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "{'manufacturer': u'Advanced Monolithic Systems'}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "AMS1117"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U4(SOT229P700X180-4N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "{'manufacturer': u'Advanced Monolithic Systems'}"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "AMS1117"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=1V8 Pin=U1-2
+Added Pin To Net: NetName=3V3 Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U4-1
+Added Pin To Net: NetName=3V3 Pin=U4-2
+Added Pin To Net: NetName=5V Pin=U4-3
+Added Pin To Net: NetName=3V3 Pin=U4-4
+Added Member To Class: ClassName=Sheet1 Member=Component U1 AMS1117-3.3
+Added Member To Class: ClassName=Sheet1 Member=Component U4 AMS1117-3.3

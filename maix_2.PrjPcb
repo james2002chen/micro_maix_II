@@ -199,7 +199,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=OWBFDYMA
 
 [Document10]
 DocumentPath=Library\SMD-4_L3.1-W2.0-P1.3-BR.PcbLib
@@ -216,7 +216,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=OJXDIMPE
 
 [Document11]
 DocumentPath=maix_2.IntLib
@@ -234,6 +234,27 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[Document12]
+DocumentPath=PCB2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=UWIEKEVN
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for maix_2\Design Rule Check - PCB2.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
