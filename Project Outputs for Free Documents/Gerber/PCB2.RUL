@@ -1,7 +1,0 @@
-DRC Rules Export File for PCB: E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc
-RuleKind=Width|RuleName=SD_CARD|Scope=Board|Minimum=10.58
-RuleKind=Width|RuleName=MIPI_CLK|Scope=Board|Minimum=10.58
-RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
-RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
-RuleKind=Width|RuleName=Width|Scope=Board|Minimum=3.50
-RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.87
