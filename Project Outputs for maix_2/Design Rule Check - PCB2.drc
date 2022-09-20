@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : E:\admin_2\Documents\GitHub\ElectronBot\micro_maix_II\PCB2.PcbDoc
 Date     : 2022/9/20
-Time     : 18:36:40
+Time     : 19:44:29
 
 Processing Rule : Clearance Constraint (Gap=7.874mil) (All),(All)
 Rule Violations :0
@@ -27,7 +27,7 @@ Rule Violations :0
 Processing Rule : Routing Layers(All)
 Rule Violations :0
 
-Processing Rule : Routing Via (Templates Used To Check Via: v30h20m0mx0(Tol13-8)) (All)
+Processing Rule : Routing Via (Templates Used To Check Via: v45h20m0mx0(Tol13-8)) (All)
 Rule Violations :0
 
 Processing Rule : Differential Pairs Uncoupled Length using the Gap Constraints (Min=5mil) (Max=5mil) (Prefered=5mil)  and Width Constraints (Min=4.33mil) (Max=6.196mil) (Prefered=6.196mil) (InDifferentialPairClass('MIPI'))
@@ -66,7 +66,7 @@ Rule Violations :0
 Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
 Rule Violations :0
 
-Waived Violations Of Rule : Routing Via (Templates Used To Check Via: v30h20m0mx0(Tol13-8)) (All)
+Waived Violations Of Rule : Routing Via (Templates Used To Check Via: v45h20m0mx0(Tol13-8)) (All)
    Waived Violation between Routing Via Style: Via (93.787mil,1017.331mil) from Top Layer to Bottom Layer Actual Size : 26.378mil Actual Hole Size : 26.378milWaived by 煜天 陈 at 2022/9/20 18:08:09按封装来
    Waived Violation between Routing Via Style: Via (93.787mil,1308.669mil) from Top Layer to Bottom Layer Actual Size : 26.378mil Actual Hole Size : 26.378milWaived by 煜天 陈 at 2022/9/20 18:08:09按封装来
 Waived Violations :2
@@ -385,4 +385,4 @@ Waived Violations :4
 
 Violations Detected : 0
 Waived Violations : 304
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02
